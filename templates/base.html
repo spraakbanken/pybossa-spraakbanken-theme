@@ -9,12 +9,12 @@
       {{ brand }} &middot; {{ title | safe }} - PyBossa by Scifabric
     </title>
     {% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="PYBOSSA is the ultimate crowdsourcing framework to analyze or enrich data that can't be processed by machines alone."
-    >
-    <meta name="author" content="Scifabric">
+    />
+    <meta name="author" content="Scifabric" />
 
     <!-- Le styles -->
     {% assets filters="libsass", output="css/gen/pybossa.min.css",
@@ -114,16 +114,16 @@
       rel="shortcut icon"
       href="{{ url_for('static', filename='img/favicon/favicon.ico') }}"
     />
-    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileColor" content="#00aba9" />
     <meta
       name="msapplication-TileImage"
       content="{{ url_for('static', filename='img/favicon/mstile-144x144.png') }}"
-    >
+    />
     <meta
       name="msapplication-config"
       content="{{ url_for('static', filename='img/favicon/browserconfig.xml') }}"
-    >
-    <meta name="theme-color" content="#ffffff">
+    />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Google Analytics or similar solutions -->
     {% include '_ga.html' ignore missing %}
@@ -132,14 +132,11 @@
   </head>
 
   <body>
-    {% set active_page = active_page | default('index') -%}
-    {% set active_project = active_project | default('none') -%}
-    {% include "_navbar.html" %} 
-    {% if not current_user.is_anonymous() %}
+    {% set active_page = active_page | default('index') -%} {% set
+    active_project = active_project | default('none') -%} {% include
+    "_navbar.html" %} {% if not current_user.is_anonymous() %}
     <!-- checkpoint::logged-in::{{current_user.name}} -->
-    {% endif %} 
-    {% block content %}{% endblock %} 
-    {% include "_footer.html" %}
+    {% endif %} {% block content %}{% endblock %} {% include "_footer.html" %}
     <!-- Le javascript -->
     <script
       type="text/javascript"
@@ -152,20 +149,15 @@
         dismiss: "Got it!",
         learnMore: "Learn More.",
         link: "{{url_for('help.cookies_policy')}}",
-        theme: "dark-bottom"
+        theme: "dark-bottom",
       };
     </script>
-    {% if not jstop %} 
-    {% assets filters="jsmin", output="js/gen/default.min.js",
-              "js/vendor/jquery-2.2.3.js",
-              "js/vendor/bootstrap.js",
-              "js/vendor/modernizr.min.js",
-              "js/flashmessages.js" %}
+    {% if not jstop %} {% assets filters="jsmin",
+    output="js/gen/default.min.js", "js/vendor/jquery-2.2.3.js",
+    "js/vendor/bootstrap.js", "js/vendor/modernizr.min.js",
+    "js/flashmessages.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-    {% endassets %}
-    {% endif %}
-    {% block pre_extrajs %} {% endblock %}
-    {% block extrajs %} {% endblock %}
-    {% include "_flash_messages.html" %}
+    {% endassets %} {% endif %} {% block pre_extrajs %} {% endblock %} {% block
+    extrajs %} {% endblock %} {% include "_flash_messages.html" %}
   </body>
 </html>
