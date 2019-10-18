@@ -8,10 +8,10 @@
 <script>
     Modernizr.load({
             test: window.JSON,
-            nope: '{{url_for('static', filename='js/vendor/json2.min.js')}}'
+            nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}"
             });
 </script>
-<script src="{{url_for('static', filename="js/pybossa/pybossa.js")}}" type="text/javascript"></script>
+<script src="{{url_for('static', filename='js/pybossa/pybossa.js')}}" type="text/javascript"></script>
 {% if project.info.results and n_results > 0 %}
      {{ project.info.results | safe}}
 {% else %}
