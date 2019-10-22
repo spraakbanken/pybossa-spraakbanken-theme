@@ -7,12 +7,6 @@ active_project = project.short_name %} {% set jstop = True %} {% block content
 "js/pybossa-player/dist/pybossa-player.min.js" %}
 <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
-<script>
-  Modernizr.load({
-    test: window.JSON,
-    nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}"
-  });
-</script>
 
 <div class="container">
   <div class="row">
@@ -46,5 +40,12 @@ active_project = project.short_name %} {% set jstop = True %} {% block content
     {% endif %}
   </div>
 </div>
-{% endblock %} {% block extrajs %} {% include "_flash_messages.html" %} {%
-endblock %}
+{% endblock %} {% block extrajs %}
+<!-- {% include "_flash_messages.html" %}  -->
+<script>
+  Modernizr.load({
+    test: window.JSON,
+    nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}"
+  });
+</script>
+{% endblock %}
