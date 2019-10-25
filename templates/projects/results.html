@@ -1,13 +1,10 @@
-{% extends "/projects/base.html" %} {% set active_page = "projects" %} {% set
-active_link = "results" %} {% set section = _('Results') %} {% set
-active_project = project.short_name %} {% block projectcontent %}
-<!-- <script>
-    Modernizr.load({
-            test: window.JSON,
-            nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}"
-            });
-</script>
-<script src="{{url_for('static', filename='js/pybossa/pybossa.js')}}" type="text/javascript"></script> -->
+{% extends "/projects/base.html" %}
+{% set active_page = "projects"  %}
+{% set active_link = "results"  %}
+{% set section = _('Results')  %}
+{% set active_project = project.short_name %}
+
+{% block projectcontent %}
 {% if project.info.results and n_results > 0 %}
 {{ project.info.results | safe }}
 {% else %}
@@ -23,11 +20,12 @@ active_project = project.short_name %} {% block projectcontent %}
   {{ current_user.locale }}
   {% endif %}
 </div>
-{% endblock %} {% block extrajs %}
+{% endblock %}
+{% block extrajs %}
 <script>
-  Modernizr.load({
-    test: window.JSON,
-    nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}"
-  });
+    Modernizr.load({
+        test: window.JSON,
+        nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}"
+    });
 </script>
 {% endblock %}
