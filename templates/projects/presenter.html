@@ -1,8 +1,6 @@
-{% extends "/base.html" %}
-{% set active_page = "projects"  %}
-{% set active_project = project.short_name %}
-{#% set jstop = True %#} 
-{% block content %}
+{% extends "/base.html" %} {% set active_page = "projects" %} {% set
+active_project = project.short_name %} {#% set jstop = True %#} {% block content
+%}
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -36,15 +34,6 @@
   </div>
 </div>
 {% endblock %} {% block extrajs %}
-<!-- {% include "_flash_messages.html" %}  -->
-<script>
-  Modernizr.load({
-    test: window.JSON,
-    nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}"
-  });
-</script>
-{% endblock %}
-{% block extrajs %}
 <script>
   Modernizr.load({
     test: window.JSON,
