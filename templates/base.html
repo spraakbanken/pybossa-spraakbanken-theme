@@ -164,6 +164,7 @@
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
     {% endif %}
+    {% block pre_extrajs %} {% endblock %}
     {% block extrajs %} {% endblock %}
     {% include "_flash_messages.html" %}
   </body>

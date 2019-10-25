@@ -40,4 +40,11 @@
     </div>
     {% endif %}
 </div>
+{% endblock %} {# block content #} 
+{% block pre_extrajs %} 
+{% assets filters="jsmin", output="js/gen/pybossa.min.js", 
+        "js/pybossa/pybossa.js",
+        "js/pybossa-player/dist/pybossa-player.min.js" %}
+<script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %} 
 {% endblock %}
