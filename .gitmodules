@@ -1,6 +1,6 @@
 [submodule "static/js/pybossa"]
 	path = static/js/pybossa
-	url = https://github.com/PyBossa/pybossa.js
+	url = https://github.com/spraakbanken/pybossa.js
 [submodule "static/js/pybossa-player"]
 	path = static/js/pybossa-player
-	url = https://github.com/PyBossa/pybossa-player.js
+	url = https://github.com/spraakbanken/pybossa-player.js
