@@ -8,16 +8,10 @@ active_project = project.short_name %} {% set jstop = True %} {% block content
 <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
 <script>
-  <<<<<<< HEAD
-        Modernizr.load({
-            test: window.JSON,
-            nope: '{{url_for('static', filename='js/vendor/json2.min.js')}}'
-  =======
-    Modernizr.load({
-      test: window.JSON,
-      nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}",
-  >>>>>>> ac5b0f5 (fix: adjust ' and ":s)
-    });
+  Modernizr.load({
+    test: window.JSON,
+    nope: "{{url_for('static', filename='js/vendor/json2.min.js')}}",
+  });
 </script>
 
 <div class="container">
