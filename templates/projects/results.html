@@ -20,7 +20,7 @@ active_project = project.short_name %} {% block projectcontent %}
 {% endif %}
 
 <div id="PYBOSSA_USER_LOCALE" hidden>
-  {% if current_user.is_anonymous() %} en {% else %} {{ current_user.locale }}
-  {% endif %}
+  {% if current_user.is_anonymous %} en {% else %} {{ current_user.locale }} {%
+  endif %}
 </div>
 {% endblock %} {# block projectcontent #}
